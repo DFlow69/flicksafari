@@ -1,0 +1,8 @@
+
+# Site settings
+title: Streaming App Documentation
+description: Documentation for our streaming application
+theme: jekyll-theme-primer
+
+# GitHub Pages settings
+markdown: kramdown
