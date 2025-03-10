@@ -100,7 +100,14 @@ export const mediaData = {
       rating: 9.5,
       imageUrl: 'https://images.unsplash.com/photo-1633613286991-611fe299c4be?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fHR2JTIwc2hvd3xlbnwwfHwwfHx8MA%3D%3D',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: true
+      isFeatured: true,
+      episodes: [
+        { id: 'tv-1-s01e01', title: 'Pilot', season: 1, episode: 1, duration: '58m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-1-s01e02', title: 'Cat\'s in the Bag...', season: 1, episode: 2, duration: '48m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-1-s01e03', title: '...And the Bag\'s in the River', season: 1, episode: 3, duration: '48m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-1-s02e01', title: 'Seven Thirty-Seven', season: 2, episode: 1, duration: '47m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-1-s02e02', title: 'Grilled', season: 2, episode: 2, duration: '48m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'tv-2',
@@ -114,7 +121,14 @@ export const mediaData = {
       rating: 9.3,
       imageUrl: 'https://images.unsplash.com/photo-1613087076553-26b60d4cc973?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGdhbWUlMjBvZiUyMHRocm9uZXN8ZW58MHx8MHx8fDA%3D',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: true
+      isFeatured: true,
+      episodes: [
+        { id: 'tv-2-s01e01', title: 'Winter Is Coming', season: 1, episode: 1, duration: '62m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-2-s01e02', title: 'The Kingsroad', season: 1, episode: 2, duration: '56m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-2-s01e03', title: 'Lord Snow', season: 1, episode: 3, duration: '58m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-2-s02e01', title: 'The North Remembers', season: 2, episode: 1, duration: '53m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-2-s02e02', title: 'The Night Lands', season: 2, episode: 2, duration: '54m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'tv-3',
@@ -128,7 +142,14 @@ export const mediaData = {
       rating: 8.7,
       imageUrl: 'https://images.unsplash.com/photo-1627873649417-c67f79857547?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHN0cmFuZ2VyJTIwdGhpbmdzfGVufDB8fDB8fHww',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: false
+      isFeatured: false,
+      episodes: [
+        { id: 'tv-3-s01e01', title: 'Chapter One: The Vanishing of Will Byers', season: 1, episode: 1, duration: '49m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-3-s01e02', title: 'Chapter Two: The Weirdo on Maple Street', season: 1, episode: 2, duration: '56m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-3-s01e03', title: 'Chapter Three: Holly, Jolly', season: 1, episode: 3, duration: '52m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-3-s02e01', title: 'Chapter One: MADMAX', season: 2, episode: 1, duration: '48m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-3-s02e02', title: 'Chapter Two: Trick or Treat, Freak', season: 2, episode: 2, duration: '56m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'tv-4',
@@ -142,7 +163,14 @@ export const mediaData = {
       rating: 8.9,
       imageUrl: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8b2ZmaWNlfGVufDB8fDB8fHww',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: false
+      isFeatured: false,
+      episodes: [
+        { id: 'tv-4-s01e01', title: 'Pilot', season: 1, episode: 1, duration: '23m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-4-s01e02', title: 'Diversity Day', season: 1, episode: 2, duration: '22m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-4-s01e03', title: 'Health Care', season: 1, episode: 3, duration: '22m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-4-s02e01', title: 'The Dundies', season: 2, episode: 1, duration: '21m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-4-s02e02', title: 'Sexual Harassment', season: 2, episode: 2, duration: '22m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'tv-5',
@@ -156,7 +184,14 @@ export const mediaData = {
       rating: 8.7,
       imageUrl: 'https://images.unsplash.com/photo-1552083375-1447ce886485?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y3Jvd258ZW58MHx8MHx8fDA%3D',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: false
+      isFeatured: false,
+      episodes: [
+        { id: 'tv-5-s01e01', title: 'Wolferton Splash', season: 1, episode: 1, duration: '57m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-5-s01e02', title: 'Hyde Park Corner', season: 1, episode: 2, duration: '61m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-5-s01e03', title: 'Windsor', season: 1, episode: 3, duration: '59m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-5-s02e01', title: 'Misadventure', season: 2, episode: 1, duration: '60m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-5-s02e02', title: 'A Company of Men', season: 2, episode: 2, duration: '54m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'tv-6',
@@ -170,7 +205,14 @@ export const mediaData = {
       rating: 8.7,
       imageUrl: 'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuZGFsb3JpYW58ZW58MHx8MHx8fDA%3D',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: false
+      isFeatured: false,
+      episodes: [
+        { id: 'tv-6-s01e01', title: 'Chapter 1: The Mandalorian', season: 1, episode: 1, duration: '39m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-6-s01e02', title: 'Chapter 2: The Child', season: 1, episode: 2, duration: '32m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-6-s01e03', title: 'Chapter 3: The Sin', season: 1, episode: 3, duration: '37m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-6-s02e01', title: 'Chapter 9: The Marshal', season: 2, episode: 1, duration: '54m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'tv-6-s02e02', title: 'Chapter 10: The Passenger', season: 2, episode: 2, duration: '42m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     }
   ],
   anime: [
@@ -186,7 +228,14 @@ export const mediaData = {
       rating: 9.0,
       imageUrl: 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YW5pbWV8ZW58MHx8MHx8fDA%3D',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: true
+      isFeatured: true,
+      episodes: [
+        { id: 'anime-1-s01e01', title: 'To You, in 2000 Years: The Fall of Shiganshina, Part 1', season: 1, episode: 1, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-1-s01e02', title: 'That Day: The Fall of Shiganshina, Part 2', season: 1, episode: 2, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-1-s01e03', title: 'A Dim Light Amid Despair: Humanity\'s Comeback, Part 1', season: 1, episode: 3, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-1-s02e01', title: 'Beast Titan', season: 2, episode: 1, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-1-s02e02', title: 'I\'m Home', season: 2, episode: 2, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'anime-2',
@@ -200,7 +249,14 @@ export const mediaData = {
       rating: 9.0,
       imageUrl: 'https://images.unsplash.com/photo-1637339603108-0243a7eb5d4b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGFuaW1lfGVufDB8fDB8fHww',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: true
+      isFeatured: true,
+      episodes: [
+        { id: 'anime-2-s01e01', title: 'Rebirth', season: 1, episode: 1, duration: '23m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-2-s01e02', title: 'Confrontation', season: 1, episode: 2, duration: '23m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-2-s01e03', title: 'Dealings', season: 1, episode: 3, duration: '23m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-2-s01e04', title: 'Pursuit', season: 1, episode: 4, duration: '23m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-2-s01e05', title: 'Tactics', season: 1, episode: 5, duration: '23m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'anime-3',
@@ -214,7 +270,14 @@ export const mediaData = {
       rating: 9.1,
       imageUrl: 'https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGFuaW1lfGVufDB8fDB8fHww',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: false
+      isFeatured: false,
+      episodes: [
+        { id: 'anime-3-s01e01', title: 'Fullmetal Alchemist', season: 1, episode: 1, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-3-s01e02', title: 'The First Day', season: 1, episode: 2, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-3-s01e03', title: 'City of Heresy', season: 1, episode: 3, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-3-s01e04', title: 'An Alchemist\'s Anguish', season: 1, episode: 4, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-3-s01e05', title: 'Rain of Sorrows', season: 1, episode: 5, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'anime-4',
@@ -228,7 +291,14 @@ export const mediaData = {
       rating: 8.8,
       imageUrl: 'https://images.unsplash.com/photo-1591123720164-de1348028a82?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGFuaW1lfGVufDB8fDB8fHww',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: false
+      isFeatured: false,
+      episodes: [
+        { id: 'anime-4-s01e01', title: 'The Strongest Man', season: 1, episode: 1, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-4-s01e02', title: 'The Lone Cyborg', season: 1, episode: 2, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-4-s01e03', title: 'The Obsessive Scientist', season: 1, episode: 3, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-4-s02e01', title: 'Return of the Hero', season: 2, episode: 1, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-4-s02e02', title: 'The Human Monster', season: 2, episode: 2, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'anime-5',
@@ -242,7 +312,14 @@ export const mediaData = {
       rating: 8.4,
       imageUrl: 'https://images.unsplash.com/photo-1541562232579-512a21360020?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGFuaW1lfGVufDB8fDB8fHww',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: false
+      isFeatured: false,
+      episodes: [
+        { id: 'anime-5-s01e01', title: 'Izuku Midoriya: Origin', season: 1, episode: 1, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-5-s01e02', title: 'What It Takes to Be a Hero', season: 1, episode: 2, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-5-s01e03', title: 'Roaring Muscles', season: 1, episode: 3, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-5-s02e01', title: 'That\'s the Idea, Ochaco', season: 2, episode: 1, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-5-s02e02', title: 'Roaring Sports Festival', season: 2, episode: 2, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     },
     {
       id: 'anime-6',
@@ -256,7 +333,14 @@ export const mediaData = {
       rating: 8.7,
       imageUrl: 'https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTZ8fGFuaW1lfGVufDB8fDB8fHww',
       videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4',
-      isFeatured: false
+      isFeatured: false,
+      episodes: [
+        { id: 'anime-6-s01e01', title: 'Cruelty', season: 1, episode: 1, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-6-s01e02', title: 'Trainer Sakonji Urokodaki', season: 1, episode: 2, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-6-s01e03', title: 'Sabito and Makomo', season: 1, episode: 3, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-6-s02e01', title: 'Sound Hashira Tengen Uzui', season: 2, episode: 1, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' },
+        { id: 'anime-6-s02e02', title: 'Infiltrating the Entertainment District', season: 2, episode: 2, duration: '24m', videoUrl: 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4' }
+      ]
     }
   ]
 };
@@ -287,4 +371,26 @@ export const searchMedia = (query) => {
     item.description.toLowerCase().includes(lowercaseQuery) ||
     item.genre.some(g => g.toLowerCase().includes(lowercaseQuery))
   );
+};
+
+// Get episodes for a specific media
+export const getEpisodesForMedia = (mediaId) => {
+  const media = getMediaById(mediaId);
+  return media?.episodes || [];
+};
+
+// Get a specific episode by id
+export const getEpisodeById = (episodeId) => {
+  let foundEpisode = null;
+  
+  getAllMedia().forEach(media => {
+    if (media.episodes) {
+      const episode = media.episodes.find(ep => ep.id === episodeId);
+      if (episode) {
+        foundEpisode = { ...episode, mediaId: media.id, mediaTitle: media.title };
+      }
+    }
+  });
+  
+  return foundEpisode;
 };

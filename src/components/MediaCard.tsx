@@ -12,6 +12,14 @@ interface MediaCardProps {
   genre: string[];
   runtime?: string;
   seasons?: number;
+  episodes?: Array<{
+    id: string;
+    title: string;
+    season: number;
+    episode: number;
+    duration: string;
+    videoUrl: string;
+  }>;
 }
 
 const MediaCard: React.FC<MediaCardProps> = ({

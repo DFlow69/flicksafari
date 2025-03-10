@@ -1,24 +1,50 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Star, Clock, Calendar } from 'lucide-react';
+import { ArrowLeft, Star, Clock, Calendar, Play } from 'lucide-react';
 import Layout from '../components/Layout';
 import VideoPlayer from '../components/VideoPlayer';
-import { getMediaById } from '../data/data';
+import { getMediaById, getEpisodesForMedia } from '../data/data';
 
 const MediaDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [media, setMedia] = useState<any | null>(null);
+  const [episodes, setEpisodes] = useState<any[]>([]);
+  const [currentEpisode, setCurrentEpisode] = useState<any | null>(null);
   const [loading, setLoading] = useState(true);
+  const [selectedSeason, setSelectedSeason] = useState<number>(1);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (id) {
       const mediaItem = getMediaById(id);
+      const mediaEpisodes = mediaItem ? getEpisodesForMedia(id) : [];
+      
       setMedia(mediaItem || null);
+      setEpisodes(mediaEpisodes);
+      
+      // For movies, use the media's video URL
+      // For TV shows and anime, use the first episode if available
+      if (mediaItem) {
+        if (id.startsWith('movie-')) {
+          setCurrentEpisode(null); // Use media's videoUrl for movies
+        } else if (mediaEpisodes.length > 0) {
+          setCurrentEpisode(mediaEpisodes[0]);
+        }
+      }
+      
       setLoading(false);
     }
   }, [id]);
+
+  const handleEpisodeSelect = (episode: any) => {
+    setCurrentEpisode(episode);
+    // Scroll to video player
+    document.getElementById('video-player')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const filteredEpisodes = episodes.filter(ep => ep.season === selectedSeason);
+  const availableSeasons = [...new Set(episodes.map(ep => ep.season))].sort((a, b) => a - b);
 
   if (loading) {
     return (
@@ -49,6 +75,7 @@ const MediaDetail: React.FC = () => {
     );
   }
 
+  const isMovie = id?.startsWith('movie-');
   const mediaType = id?.startsWith('movie-') 
     ? 'Movie' 
     : id?.startsWith('tv-') 
@@ -154,12 +181,83 @@ const MediaDetail: React.FC = () => {
               </div>
               
               {/* Video Player */}
-              <div className="mt-4 mb-8 animate-slide-up">
+              <div id="video-player" className="mt-4 mb-8 animate-slide-up">
                 <VideoPlayer 
-                  videoUrl={media.videoUrl} 
+                  videoUrl={currentEpisode ? currentEpisode.videoUrl : media.videoUrl} 
                   poster={media.imageUrl}
                 />
+                
+                {currentEpisode && !isMovie && (
+                  <div className="mt-2 mb-4">
+                    <h3 className="text-lg font-medium">
+                      S{currentEpisode.season} E{currentEpisode.episode}: {currentEpisode.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">Duration: {currentEpisode.duration}</p>
+                  </div>
+                )}
               </div>
+              
+              {/* Episodes (for TV Shows and Anime) */}
+              {!isMovie && episodes.length > 0 && (
+                <div className="mt-8 animate-fade-in">
+                  <div className="flex items-center justify-between mb-6">
+                    <h2 className="text-2xl font-semibold">Episodes</h2>
+                    
+                    {availableSeasons.length > 1 && (
+                      <div className="flex items-center space-x-2">
+                        <label className="text-sm font-medium">Season:</label>
+                        <select 
+                          value={selectedSeason}
+                          onChange={(e) => setSelectedSeason(Number(e.target.value))}
+                          className="bg-muted px-3 py-1.5 rounded-md border border-border text-sm"
+                        >
+                          {availableSeasons.map(season => (
+                            <option key={season} value={season}>
+                              Season {season}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className="space-y-3">
+                    {filteredEpisodes.map((episode, index) => (
+                      <div 
+                        key={episode.id}
+                        className={`flex items-center p-3 rounded-lg cursor-pointer transition-colors ${
+                          currentEpisode?.id === episode.id 
+                            ? 'bg-primary/20 border border-primary/30' 
+                            : 'hover:bg-muted'
+                        }`}
+                        onClick={() => handleEpisodeSelect(episode)}
+                      >
+                        <div className="w-10 h-10 flex items-center justify-center bg-muted rounded-full mr-4 shrink-0">
+                          {currentEpisode?.id === episode.id ? (
+                            <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                          ) : (
+                            <Play size={16} />
+                          )}
+                        </div>
+                        
+                        <div className="flex-1 min-w-0">
+                          <div className="flex justify-between mb-1">
+                            <span className="text-xs text-muted-foreground">
+                              Episode {episode.episode}
+                            </span>
+                            <span className="text-xs text-muted-foreground">
+                              {episode.duration}
+                            </span>
+                          </div>
+                          <h4 className="text-sm font-medium truncate">
+                            {episode.title}
+                          </h4>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
