@@ -20,9 +20,9 @@ Welcome to StreamVista, your premium streaming platform for movies, TV shows, an
 
 Visit our website and browse through the different categories:
 
-- [Movies](/movies)
-- [TV Shows](/tvshows)
-- [Anime](/anime)
+- [Movies](./movies)
+- [TV Shows](./tvshows)
+- [Anime](./anime)
 
 ## Technical Information
 
