@@ -1,16 +1,32 @@
 
 ---
 layout: default
-title: Streaming App Documentation
+title: StreamVista - Premium Streaming Experience
 ---
 
-# Streaming App Documentation
+# StreamVista
 
-This is the documentation for our streaming application that offers movies, TV shows, and anime content.
+Welcome to StreamVista, your premium streaming platform for movies, TV shows, and anime.
 
 ## Features
 
-- Browse movies, TV shows, and anime
-- Stream content using Plyr video player
-- Search functionality
-- Responsive design
+- Extensive library of movies, TV shows, and anime content
+- High-quality streaming with our advanced video player
+- User-friendly interface with responsive design
+- Quick search functionality to find your favorite content
+- Episode tracking for TV shows and anime series
+
+## Getting Started
+
+Visit our website and browse through the different categories:
+
+- [Movies](/movies)
+- [TV Shows](/tvshows)
+- [Anime](/anime)
+
+## Technical Information
+
+StreamVista is built using modern web technologies:
+- React for the user interface
+- Tailwind CSS for styling
+- Plyr video player for streaming capabilities

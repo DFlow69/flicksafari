@@ -1,8 +1,10 @@
 
 # Site settings
-title: Streaming App Documentation
-description: Documentation for our streaming application
+title: StreamVista
+description: Premium streaming experience for movies, TV shows, and anime
 theme: jekyll-theme-primer
 
 # GitHub Pages settings
 markdown: kramdown
+baseurl: ""
+url: ""
