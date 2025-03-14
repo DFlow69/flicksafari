@@ -108,16 +108,6 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Loading Image Blur */
-.image-loading {
-  filter: blur(10px);
-  transition: filter 0.3s ease;
-}
-
-.image-loaded {
-  filter: blur(0);
-}
-
 /* Enhanced Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -164,4 +154,11 @@
 /* Tab indicator animation */
 .tab-indicator {
   transition: all 0.3s ease;
+}
+
+/* Dark mode transition */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }

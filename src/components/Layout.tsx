@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import SearchBar from './SearchBar';
+import ThemeToggle from './ThemeToggle';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -61,14 +62,20 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               </NavLink>
             </nav>
 
-            {/* Search Toggle */}
-            <button 
-              className="p-2 rounded-full hover:bg-muted transition-colors duration-200"
-              onClick={() => setShowSearch(!showSearch)}
-              aria-label="Toggle search"
-            >
-              <Search size={20} />
-            </button>
+            {/* Action Buttons */}
+            <div className="flex items-center space-x-2">
+              {/* Theme Toggle */}
+              <ThemeToggle />
+              
+              {/* Search Toggle */}
+              <button 
+                className="p-2 rounded-full hover:bg-muted transition-colors duration-200"
+                onClick={() => setShowSearch(!showSearch)}
+                aria-label="Toggle search"
+              >
+                <Search size={20} />
+              </button>
+            </div>
           </div>
 
           {/* Search Bar - Expandable */}
