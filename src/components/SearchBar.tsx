@@ -3,20 +3,40 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, X } from 'lucide-react';
 import { searchMedia } from '../data/data';
+import { Input } from "@/components/ui/input";
+
+// Define types for media items
+interface MediaItem {
+  id: string;
+  title: string;
+  imageUrl: string;
+  releaseYear: number;
+  genre: string[];
+}
 
 const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
-  const [results, setResults] = useState<any[]>([]);
+  const [results, setResults] = useState<MediaItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
-  // Handle search query changes
+  // Handle search query changes with debounce
   useEffect(() => {
     if (query.length >= 2) {
-      const searchResults = searchMedia(query);
-      setResults(searchResults);
-      setIsOpen(true);
+      setIsLoading(true);
+      
+      // Simulate network delay for a more realistic search experience
+      const timer = setTimeout(() => {
+        const searchResults = searchMedia(query);
+        setResults(searchResults);
+        setIsOpen(true);
+        setIsLoading(false);
+      }, 300);
+      
+      return () => clearTimeout(timer);
     } else {
       setResults([]);
       setIsOpen(false);
@@ -35,6 +55,13 @@ const SearchBar: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // Focus input when search is opened
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
+
   // Handle selection of a search result
   const handleSelect = (id: string) => {
     setQuery('');
@@ -50,29 +77,42 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <div className="relative" ref={searchRef}>
+    <div className="relative w-full" ref={searchRef}>
       <div className="relative">
-        <input
+        <Input
+          ref={inputRef}
           type="text"
           placeholder="Search movies, TV shows, anime..."
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full px-4 py-3 pl-10 rounded-lg bg-muted/50 border border-border focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all duration-200"
+          className="w-full pl-10 pr-10 py-2 bg-muted/50 focus:ring-2 focus:ring-primary/30"
         />
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
         {query && (
           <button
             onClick={clearSearch}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Clear search"
           >
             <X size={18} />
           </button>
         )}
       </div>
 
+      {/* Loading indicator */}
+      {isLoading && query.length >= 2 && (
+        <div className="absolute mt-2 left-0 right-0 z-10 bg-background border border-border rounded-lg shadow-lg p-4 text-center animate-in fade-in slide-in-from-top-5 duration-300">
+          <div className="flex items-center justify-center space-x-2">
+            <div className="h-3 w-3 rounded-full bg-primary animate-pulse"></div>
+            <div className="h-3 w-3 rounded-full bg-primary animate-pulse delay-150"></div>
+            <div className="h-3 w-3 rounded-full bg-primary animate-pulse delay-300"></div>
+          </div>
+        </div>
+      )}
+
       {/* Search Results Dropdown */}
-      {isOpen && results.length > 0 && (
-        <div className="absolute mt-2 left-0 right-0 z-10 bg-background border border-border rounded-lg shadow-lg overflow-hidden animate-slide-down">
+      {isOpen && results.length > 0 && !isLoading && (
+        <div className="absolute mt-2 left-0 right-0 z-10 bg-background border border-border rounded-lg shadow-lg overflow-hidden animate-in fade-in slide-in-from-top-5 duration-300">
           <div className="max-h-[60vh] overflow-y-auto">
             {results.map((item) => (
               <div
@@ -99,8 +139,8 @@ const SearchBar: React.FC = () => {
       )}
 
       {/* No Results Message */}
-      {isOpen && query.length >= 2 && results.length === 0 && (
-        <div className="absolute mt-2 left-0 right-0 z-10 bg-background border border-border rounded-lg shadow-lg p-4 text-center animate-slide-down">
+      {isOpen && query.length >= 2 && results.length === 0 && !isLoading && (
+        <div className="absolute mt-2 left-0 right-0 z-10 bg-background border border-border rounded-lg shadow-lg p-4 text-center animate-in fade-in slide-in-from-top-5 duration-300">
           <p className="text-muted-foreground">No results found for "{query}"</p>
         </div>
       )}
