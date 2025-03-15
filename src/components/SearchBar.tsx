@@ -19,6 +19,7 @@ const SearchBar: React.FC = () => {
   const [results, setResults] = useState<MediaItem[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const searchRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -27,19 +28,28 @@ const SearchBar: React.FC = () => {
   useEffect(() => {
     if (query.length >= 2) {
       setIsLoading(true);
+      setError(null);
       
       // Simulate network delay for a more realistic search experience
       const timer = setTimeout(() => {
-        const searchResults = searchMedia(query);
-        setResults(searchResults);
-        setIsOpen(true);
-        setIsLoading(false);
+        try {
+          const searchResults = searchMedia(query);
+          setResults(searchResults || []); // Ensure we handle null/undefined
+          setIsOpen(true);
+        } catch (err) {
+          console.error('Search error:', err);
+          setError('An error occurred while searching. Please try again.');
+          setResults([]);
+        } finally {
+          setIsLoading(false);
+        }
       }, 300);
       
       return () => clearTimeout(timer);
     } else {
       setResults([]);
       setIsOpen(false);
+      setError(null);
     }
   }, [query]);
 
@@ -74,6 +84,7 @@ const SearchBar: React.FC = () => {
     setQuery('');
     setResults([]);
     setIsOpen(false);
+    setError(null);
   };
 
   return (
@@ -110,8 +121,15 @@ const SearchBar: React.FC = () => {
         </div>
       )}
 
+      {/* Error message */}
+      {error && !isLoading && (
+        <div className="absolute mt-2 left-0 right-0 z-10 bg-destructive/10 border border-destructive/30 rounded-lg shadow-lg p-4 text-center animate-in fade-in slide-in-from-top-5 duration-300">
+          <p className="text-destructive">{error}</p>
+        </div>
+      )}
+
       {/* Search Results Dropdown */}
-      {isOpen && results.length > 0 && !isLoading && (
+      {isOpen && results.length > 0 && !isLoading && !error && (
         <div className="absolute mt-2 left-0 right-0 z-10 bg-background border border-border rounded-lg shadow-lg overflow-hidden animate-in fade-in slide-in-from-top-5 duration-300">
           <div className="max-h-[60vh] overflow-y-auto">
             {results.map((item) => (
@@ -122,14 +140,14 @@ const SearchBar: React.FC = () => {
               >
                 <div 
                   className="h-12 w-12 md:h-16 md:w-16 rounded bg-muted mr-3 flex-shrink-0 bg-cover bg-center" 
-                  style={{ backgroundImage: `url(${item.imageUrl})` }}
+                  style={{ backgroundImage: `url(${item.imageUrl || 'https://placehold.co/300x450/222/white?text=No+Image'})` }}
                 />
                 <div className="flex-1 min-w-0">
                   <h4 className="font-medium text-foreground truncate">{item.title}</h4>
                   <div className="flex items-center mt-1 text-xs text-muted-foreground">
                     <span className="mr-2">{item.releaseYear}</span>
                     <span className="mr-2">•</span>
-                    <span>{item.genre.slice(0, 2).join(', ')}</span>
+                    <span>{Array.isArray(item.genre) ? item.genre.slice(0, 2).join(', ') : 'Unknown'}</span>
                   </div>
                 </div>
               </div>
@@ -139,7 +157,7 @@ const SearchBar: React.FC = () => {
       )}
 
       {/* No Results Message */}
-      {isOpen && query.length >= 2 && results.length === 0 && !isLoading && (
+      {isOpen && query.length >= 2 && results.length === 0 && !isLoading && !error && (
         <div className="absolute mt-2 left-0 right-0 z-10 bg-background border border-border rounded-lg shadow-lg p-4 text-center animate-in fade-in slide-in-from-top-5 duration-300">
           <p className="text-muted-foreground">No results found for "{query}"</p>
         </div>
